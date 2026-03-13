@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 # Import your main app
-from main import app
+from .main import app
 
 # The app is already configured in main.py and exports as 'app'
 # Vercel will use this file to run the FastAPI application as a serverless function
