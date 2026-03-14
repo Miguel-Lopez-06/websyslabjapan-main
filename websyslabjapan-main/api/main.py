@@ -217,7 +217,7 @@ def create_upload_url(
 
         # This is the line that is likely failing.
         print("Attempting to call supabase.storage.create_signed_upload_url...")
-        signed_url_response = supabase.storage.create_signed_upload_url(BUCKET_NAME, path)
+        signed_url_response = supabase.storage.from_(BUCKET_NAME).create_signed_url(path, expires_in=3600)
         print("Successfully generated signed URL.")
         
         public_url = f"{SUPABASE_URL}/storage/v1/object/public/{BUCKET_NAME}/{path}"
