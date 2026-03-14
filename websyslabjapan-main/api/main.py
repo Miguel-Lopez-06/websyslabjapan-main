@@ -44,17 +44,16 @@ BUCKET_NAME = SUPABASE_BUCKET_NAME
 app = FastAPI(title="sKonnect API")
 
 # --- CORS Middleware Setup ---
-origins = [
-    "http://localhost:5173",
-    "https://websyslabjapan-main.vercel.app",
-]
-                              
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[
+        "https://websyslabjapan-main.vercel.app",  # your Vercel domain
+        "http://localhost:*",  # for local dev (e.g., Vite/React)
+        "*"  # temporary wildcard for testing (remove in prod)
+    ],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # --- Supabase Client and Settings ---
