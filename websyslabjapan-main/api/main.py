@@ -46,9 +46,7 @@ app = FastAPI(title="sKonnect API")
 # --- CORS Middleware Setup ---
 origins = [
     "http://localhost:5173",
-    "https://websyslabjapan.vercel.app",
-    "https://*.vercel.app",
-    "*",  # Allow all origins for Vercel deployment
+    "https://websyslabjapan-main.vercel.app",
 ]
                               
 app.add_middleware(
