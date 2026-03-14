@@ -17,6 +17,9 @@ from sqlalchemy.orm import Session
 from supabase import create_client, Client
 from typing import Optional
 
+Query
+from fastapi.middleware.cors import CORSMiddleware
+
 # Load .env.local from project root
 env_path = Path(__file__).resolve().parent.parent / ".env.local"
 load_dotenv(dotenv_path=env_path)              
